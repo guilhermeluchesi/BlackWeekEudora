@@ -108,15 +108,29 @@
     </form>
   </div>
 </div>
+
+<p>Categorias</p>
 @foreach($categories as $key => $category)
     <div class="text-left">
         <button type="submit" class="btn btn-sm btn-outline-secondary">
-            <a href="{{'/'}}">{!!$category!!} ({{$productCollection->where('Categoria', 'MAQUIAGEM')->count()}})</a>
+            <a href="{{'/'}}">{!!$key!!} ({{$productCollection->where('Categoria', $key)->count()}})</a>
         </button>
     </div>
-@endForeach()
+@endForeach
 
+<p>FAIXA DE PREÇO</p>
 
+<form action="/" method="GET">
+<div class="form-group">
+  <label for="sel1">ORDENAR POR</label>
+  <select onchange="this.form.submit()" class="form-control" name="orderBy">
+    <option value="1">Menor preço</option>
+    <option value="2">Menor desconto</option>
+    <option value="3">Maior desconto</option>
+    <option value="4">Produto</option>
+  </select>
+</div>
+</form>
 
     </main>
 
