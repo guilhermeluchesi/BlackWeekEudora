@@ -90,9 +90,33 @@
             </div>
 
            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-sm btn-outline-secondary">
+                    <a href="{{$pagination->nextPageUrl()}}">Carregar Mais</a>
+                </button>
+            </div>
           </div>
         </div>
       </div>
+
+
+<div class="topnav">
+  <div class="search-container">
+    <form action="/">
+      <input type="text" placeholder="" name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+@foreach($categories as $key => $category)
+    <div class="text-left">
+        <button type="submit" class="btn btn-sm btn-outline-secondary">
+            <a href="{{'/'}}">{!!$category!!} ({{$productCollection->where('Categoria', 'MAQUIAGEM')->count()}})</a>
+        </button>
+    </div>
+@endForeach()
+
+
 
     </main>
 
