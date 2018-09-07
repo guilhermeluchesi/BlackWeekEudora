@@ -12,6 +12,7 @@ class StoreController extends BaseController
     {
         $products = (new FastExcel)->import('/var/www/lista.xlsx');
 
+
         return View::make('store.index')
             ->withProducts($products);
     }
