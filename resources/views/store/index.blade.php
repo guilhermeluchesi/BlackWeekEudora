@@ -15,6 +15,11 @@
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.1/examples/album/album.css" rel="stylesheet">
   </head>
+  <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>
 
   <body>
 
@@ -88,11 +93,10 @@
                 </div>
              @endForeach
             </div>
-
            </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-sm btn-outline-secondary">
-                    <a href="{{$pagination->nextPageUrl()}}">Carregar Mais</a>
+                    <a href="{{$pagination->nextPageUrl().'&type='.Request::input('type')}}">Carregar Mais</a>
                 </button>
             </div>
           </div>
@@ -113,21 +117,91 @@
 @foreach($categories as $key => $category)
     <div class="text-left">
         <button type="submit" class="btn btn-sm btn-outline-secondary">
-            <a href="{{'/'}}">{!!$key!!} ({{$productCollection->where('Categoria', $key)->count()}})</a>
+            <a href="{{'/?type='.$key}}">{!!$key!!} ({{$productCollection->where('Categoria', $key)->count()}})</a>
         </button>
     </div>
 @endForeach
 
-<p>FAIXA DE PREÇO</p>
+
+<style>
+body {
+  font-family: "Arial";
+}
+
+.ui-widget-content {
+border: 1px solid #ffcc00;
+background: #000000;
+color: #0000ff;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+border: 1px solid #bbb;
+background: #f6f6f6 url(https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
+font-weight: bold;
+color: #1c94c4;
+
+.ui-slider-horizontal .ui-slider-handle {
+top: -.3em;
+margin-left: -.6em;
+}
+
+.ui-slider-handle.ui-state-default.ui-corner-all{
+  border: 3px solid #00ff00;
+}
+</style>
+
+<script>
+    $(function() {
+
+  $( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: 500,
+    values: [ 0, 300 ],
+    slide: function( event, ui ) {
+      $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+    }
+  });
+
+ $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+});
+
+</script>
+
+
+
+ <script src="http://jsconsole.com/remote.js?ED1DA72B-96E9-4697-A7BF-209E03754074"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+
+  <p>
+    <label for="amount">Price range:</label>
+    <input type="text" id="amount" readonly style="border:0; font-weight:bold;">
+  </p>
+
+  <div id="slider-range"></div>
+  <br />
+  <br />
+  <br />
+
+
+
+
+
 
 <form action="/" method="GET">
 <div class="form-group">
   <label for="sel1">ORDENAR POR</label>
   <select onchange="this.form.submit()" class="form-control" name="orderBy">
-    <option value="1">Menor preço</option>
-    <option value="2">Menor desconto</option>
-    <option value="3">Maior desconto</option>
-    <option value="4">Produto</option>
+    <option value=""></option>
+    <option value="RE Vende por">Menor preço</option>
+    <option value="% de Desconto">Menor desconto</option>
+    <option value="-% de Desconto">Maior desconto</option>
+    <option value="Produto">Produto</option>
   </select>
 </div>
 </form>
@@ -144,10 +218,5 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
-    <script src="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css"></script>
-    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>
   </body>
 </html>
