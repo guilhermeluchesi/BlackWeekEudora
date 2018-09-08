@@ -20,11 +20,24 @@ class StoreController extends BaseController
         $products = (new FastExcel)->import('/var/www/lista.xlsx');
         $categories = $products->groupBy('Categoria');
 
+        if ($request->has('orderBy')) {
+            $products = $products->sortBy($request->input('orderBy'));
+        }
+
+        if (strpos($request->input('orderBy'), '-') !== false) {
+            $option = trim($request->input('orderBy'), '-');
+            $products = $products->sortByDesc($option);
+        }
+
         if ($request->has('search')) {
             $products = $products->where('Produto', $request->input('search'));
         }
 
-        $pagination = $this->getPagination($products, self::PAGINATION, $request->input('page'), []);
+        if($request->has('type') && $request->input('type')) {
+            $products = $products->where('Categoria', $request->input('type'));
+        }
+
+        $pagination = $this->getPagination($products, self::PAGINATION, $request->input('page'), $request->all());
 
         return View::make('store.index')
             ->withProducts($pagination->items())
