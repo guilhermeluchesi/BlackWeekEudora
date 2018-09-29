@@ -1,0 +1,29 @@
+.sidebar > .row:first-child {
+    margin-top: 0;
+}
+
+.sidebar > .row {
+    margin: 30px 0;
+}
+
+.sidebar h2 {
+    padding-left: 15px;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 5px 15px;
+}
+
+.sidebar-menu-count {
+    float: right;
+}
+
+.sidebar-menu-txt {
+    text-transform: capitalize;
+}
+
+.sidebar-menu {
+    padding: 15px 0;
+    width: 100%;
+}
