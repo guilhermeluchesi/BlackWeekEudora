@@ -35,3 +35,43 @@ h2.product-card-title {
 .product-card-top {
     margin-bottom: 15px;
 }
+
+.discount-seal {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 100px;
+    padding: 21px 0 0;
+    position: absolute;
+    right: 31px;
+    top: 15px;
+}
+
+.discount-seal::before {
+    width: 92%;
+    height: 92%;
+    content: '';
+    border: 2px solid black;
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    border-radius: 100px;
+}
+
+.discount-seal b {
+    font-size: 30px;
+    display: block;
+    line-height: 17px;
+    padding-top: 11px;
+}
+
+.discount-seal b:after {
+    content: '%';
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 11px;
+}
+
+.discount-seal span {
+    letter-spacing:  -0.5px;
+}
