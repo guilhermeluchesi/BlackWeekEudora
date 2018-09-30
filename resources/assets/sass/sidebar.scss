@@ -1,13 +1,12 @@
-.sidebar > .row:first-child {
-    margin-top: 0;
-}
 
-.sidebar > .row {
-    margin: 30px 0;
-}
+.sidebar {
+    > .row {
+        margin: 30px 0;
+    }
 
-.sidebar h2 {
-    padding-left: 15px;
+    .sidebar h2 {
+        padding-left: 15px;
+    }
 }
 
 .sidebar-menu a {
@@ -26,4 +25,11 @@
 .sidebar-menu {
     padding: 15px 0;
     width: 100%;
+}
+
+@media (min-width: 426px) {
+    .sidebar > .row:first-child {
+        margin-top: 0;
+    }
+
 }

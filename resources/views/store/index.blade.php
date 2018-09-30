@@ -5,12 +5,12 @@
 
 @section('sidebar')
     <div class="row">
-        <h2 class="txt-gold">Procurar um produto</h2>
-        <form action="/">
-            <div class="input-group">
+        <h2 class="txt-gold col-12">Procurar um produto</h2>
+        <form class="col-12" action="/">
+            <div class="input-group ">
                 <input type="text" class="form-control" placeholder="" name="search">
                 <div class="input-group-append">
-                    <i class="fa fa-search"></i>
+                    <button class="btn btn-outline-secondary" type="button">Buscar</button>
                 </div>
             </div>
         </form>
@@ -29,7 +29,7 @@
     </div>
     <div class="row">
         <h2 class="txt-gold">Faixa de preço</h2>
-        <form action="/">
+        <form class="col-12" action="/">
             <div class="input-group">
                 <input type="range" class="custom-range">
             </div>
@@ -50,10 +50,10 @@
 @section('content')
     <div class="row">
         @foreach($products as $product)
-            <div class="col-md-4">
+            <div class="col-12 col-sm-6 col-xl-4">
                 <div class="product-card">
                     <div class="product-card-top">
-                        <div class="discount-seal bg-red">
+                        <div class="discount-seal bg-red rounded-circle">
                             <b>{{(int)(array_get($product,'% de Desconto')*100)}}</b><span>DESCONTO</span>
                         </div>
                         <div class="product-card-img-container">
@@ -68,13 +68,13 @@
                     </div>
                     <div class="product-card-container-footer">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-12 col-md-6 col-xl-5">
                                 <span
                                     class="price-card-from"> DE: <b>R${!!array_get($product, 'Valor do Guia')!!}</b></span>
                                 <span
                                     class="price-card-to"> POR: <b>R${!!array_get($product, 'Preço Promocionado')!!}</b></span>
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-5 col-md-6 col-xl-7 text-center">
                                 <a class="btn-white bg-white txt-grey" href="#">Comprar</a>
                             </div>
                         </div>

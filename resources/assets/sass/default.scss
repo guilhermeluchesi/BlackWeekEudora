@@ -1,5 +1,6 @@
 body {
     color: white;
+    background: radial-gradient(ellipse at center, #5a5e5b 0%,#2f2f2d 100%);
 }
 
 .container-site{
@@ -45,6 +46,10 @@ h2 {
     border-radius: 15px;
 }
 
+a{
+    transition: 0.15s;
+}
+
 a.bg-gold, .bg-gold a {
     color: $grey;
     transition: 0.15s;
@@ -56,9 +61,8 @@ a.bg-gold:hover, .bg-gold a:hover {
 
 .btn-white {
     border-radius: 24px;
-    font-size: 15px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 1px 20px;
-    display: inline-block;
+    padding: 1% 20%;
+    text-align: center;
 }

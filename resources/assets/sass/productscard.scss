@@ -4,7 +4,7 @@
     margin-bottom: 10.33%;
 }
 
-.product-card .btn-white{
+.product-card .btn-white {
     margin-top: 4px;
     display: inline-block;
 }
@@ -37,41 +37,64 @@ h2.product-card-title {
 }
 
 .discount-seal {
-    width: 100px;
-    height: 100px;
     text-align: center;
-    border-radius: 100px;
-    padding: 21px 0 0;
+    padding: 9% 6%;
+    box-sizing: border-box;
     position: absolute;
     right: 31px;
     top: 15px;
+    min-width: 80px;
+    min-height: 80px;
+
+    ::before {
+        width: 92%;
+        height: 92%;
+        content: '';
+        border: 2px solid black;
+        position: absolute;
+        top: 4%;
+        right: 4%;
+        border-radius: 100px;
+    }
+
+    b {
+        display: block;
+        font-size: 1.54em;
+        line-height: 0.5em;
+        padding-top: 0.1em;
+    }
+
+    b:after {
+        content: '%';
+        font-weight: normal;
+        font-size: 0.75em;
+        line-height: 0;
+    }
+
+    span {
+        letter-spacing: -0.5px;
+        font-size: 0.75em;
+    }
 }
 
-.discount-seal::before {
-    width: 92%;
-    height: 92%;
-    content: '';
-    border: 2px solid black;
-    position: absolute;
-    top: 4%;
-    right: 4%;
-    border-radius: 100px;
-}
-
-.discount-seal b {
-    font-size: 30px;
+.price-card-from {
     display: block;
-    line-height: 17px;
-    padding-top: 11px;
 }
 
-.discount-seal b:after {
-    content: '%';
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 11px;
+@media (max-width: 1024px) and(min-width: 769px) {
+    .discount-seal {
+        padding: 7% 5%;
+    }
 }
 
-.discount-seal span {
-    letter-spacing:  -0.5px;
+@media (max-width: 425px) and (min-width: 376px) {
+    .discount-seal {
+        padding: 6% 4%;
+    }
+}
+
+@media(max-width: 321px) {
+    .discount-seal {
+        padding: 7% 4%;
+    }
 }
