@@ -10,7 +10,7 @@
             <div class="input-group ">
                 <input type="text" class="form-control" placeholder="" name="search">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">Buscar</button>
+                    <button class="btn btn-outline-secondary" type="submit button">Buscar</button>
                 </div>
             </div>
         </form>
@@ -22,7 +22,7 @@
                 <a href="{{'/?type='.$key}}">
                     <i class="fa fa-search"></i>
                     <span class="sidebar-menu-txt">{!!mb_strtolower($key)!!}</span>
-                    <span class="sidebar-menu-count">({{$productCollection->where('Categoria', $key)->count()}})</span>
+                    <span class="sidebar-menu-count">({{$category->count()}})</span>
                 </a>
             @endForeach
         </nav>
@@ -37,13 +37,15 @@
     </div>
     <div class="row">
         <h2 class="txt-gold">Ordenar Por</h2>
-        <select class="custom-select">
-            <option value="price_asc" selected><b>Menor</b> preço</option>
-            <option value="price_desc"><b>Maior</b> preço</option>
-            <option value="descount_asc" selected><b>Menor</b> desconto</option>
-            <option value="descount_desc"><b>Maior</b> desconto</option>
-            <option value="name_asc">Produto</option>
+        <form action="/">
+        <select onchange="this.form.submit()" class="custom-select" name="orderBy">
+            <option value="RE Vende por" selected><b>Menor</b> preço</option>
+            <option value="-RE Vende por"><b>Maior</b> preço</option>
+            <option value="% de Desconto"><b>Menor</b> desconto</option>
+            <option value="-% de Desconto"><b>Maior</b> desconto</option>
+            <option value="Produto">Produto</option>
         </select>
+        </form>
     </div>
 @stop
 
