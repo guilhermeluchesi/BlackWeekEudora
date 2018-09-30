@@ -21,12 +21,32 @@
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>-->
 </head>
 <body class="page-@yield('class-pg')">
+<header>
+    <div class="left">
+        <div class="imagePromo">imagem</div>
+        <div class="infoRectangle bg-gold">
+            <div class="infoWrapper">
+                <span class="textInfo">Produtos a partir de:</span>
+                <div class="priceWrapper">
+                    <span class="moeda">R$</span>
+                    <span class="reais">6</span>
+                    <span class="centavos">,99</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="imageLogo">
+            imagem
+        </div>
+    </div>
+</header>
 <div class="container container-site">
     <div class="row">
-        <nav class="col-md-3 sidebar">
+        <nav class="order-last order-sm-first col-12 col-md-4 col-xl-3 sidebar">
             @yield('sidebar')
         </nav>
-        <div class="col-md-9">
+        <div class="col-12 col-md-8 col-xl-9">
             @yield('content')
         </div>
     </div>
