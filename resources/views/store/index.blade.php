@@ -27,12 +27,30 @@
             @endForeach
         </nav>
     </div>
+
+    <script>
+    function evalSlider()
+    {
+        var sliderValue = document.getElementById('rating').value;
+        document.getElementById('sliderVal').innerHTML = 'R$ '+sliderValue;
+    }
+
+    </script>
+
+    <style>
+    .right {
+        float: right;
+    }
+    </style>
+
     <div class="row">
         <h2 class="txt-gold">Faixa de preço</h2>
-        <form class="col-12" action="/">
+        <form class="col-12" action="/" id="sliderForm">
             <div class="input-group">
-                <input type="range" class="custom-range">
+                <input name="slider" type="range" class="custom-range" min="1" max="200" id="rating" onmousemove="evalSlider()" onchange="this.form.submit()">
             </div>
+                <output id="sliderVal">R$ 100</output>
+                <span class="right">R$ 200</span>
         </form>
     </div>
     <div class="row">
