@@ -17,7 +17,7 @@ class StoreController extends BaseController
 
     public function index(Request $request)
     {
-        $products = (new FastExcel)->import('/var/www/lista.xlsx');
+        $products = (new FastExcel)->import(sprintf('%s%s',env('LIST_XLSX_PATH'),'lista.xlsx'));
         $categories = $products->groupBy('Categoria');
 
         if ($request->has('orderBy')) {

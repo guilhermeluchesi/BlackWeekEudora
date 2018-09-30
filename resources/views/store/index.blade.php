@@ -53,7 +53,9 @@
             <div class="col-md-4">
                 <div class="product-card">
                     <div class="product-card-top">
-                        <div class="discount-seal"></div>
+                        <div class="discount-seal bg-red">
+                            <b>{{(int)(array_get($product,'% de Desconto')*100)}}</b><span>DESCONTO</span>
+                        </div>
                         <div class="product-card-img-container">
                             <img class="img-fluid"
                                  src="https://http2.mlstatic.com/chevrolet-opala-1970-motor-6cc-cambio-na-coluna-freio-disco-D_NQ_NP_735111-MLB26502778408_122017-F.jpg"
@@ -61,7 +63,7 @@
                         </div>
                     </div>
                     <div class="product-card-container-desc">
-                        <span class="product-card-code bg-gold border-rounded">12345</span>
+                        <span class="product-card-code bg-gold border-rounded">{!! array_get($product,'Cód.  SAP') !!}</span>
                         <h2 class="product-card-title">{!!array_get($product, 'Produto')!!}</h2>
                     </div>
                     <div class="product-card-container-footer">
