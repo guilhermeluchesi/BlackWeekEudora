@@ -8,7 +8,8 @@
         <h2 class="txt-gold col-12">Procurar um produto</h2>
         <form class="col-12" action="/">
             <div class="input-group ">
-                <input type="text" class="form-control" placeholder="" name="search">
+                <input type="text" class="form-control"
+                value="{{Request::input('search')}}" placeholder="" name="search">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit button">Buscar</button>
                 </div>
@@ -47,10 +48,11 @@
         <h2 class="txt-gold">Faixa de preço</h2>
         <form class="col-12" action="/" id="sliderForm">
             <div class="input-group">
-                <input name="slider" type="range" class="custom-range" min="1" max="200" id="rating" onmousemove="evalSlider()" onchange="this.form.submit()">
+                <input name="slider" type="range" class="custom-range" min="1"
+                max="{!!$maxValue!!}" id="rating" onmousemove="evalSlider()" onchange="this.form.submit()">
             </div>
                 <output id="sliderVal">R$ 100</output>
-                <span class="right">R$ 200</span>
+                <span class="right">R$ {!!$maxValue!!}</span>
         </form>
     </div>
     <div class="row">
