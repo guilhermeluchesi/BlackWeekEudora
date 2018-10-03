@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Redis;
 use Rap2hpoutre\FastExcel\FastExcel;
-use Illuminate\Support\Collection;
+use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\View;
 
 
@@ -18,6 +20,7 @@ class StoreController extends BaseController
     public function index(Request $request)
     {
         $products = (new FastExcel)->import(sprintf('%s%s',env('LIST_XLSX_PATH'),'lista.xlsx'));
+        $maxValue = round($products->max('RE Vende por'));
         $categories = $products->groupBy('Categoria');
 
         if ($request->has('orderBy')) {
@@ -30,7 +33,10 @@ class StoreController extends BaseController
         }
 
         if ($request->has('search')) {
-            $products = $products->where('Produto', $request->input('search'));
+            $search = $request->input('search');
+            $products = $products->reject(function($element) use ($search) {
+                return mb_strpos(Arr::get($element, 'Produto'), strtoupper($search)) === false;
+            });
         }
 
         if ($request->has('type') && $request->input('type')) {
@@ -44,6 +50,7 @@ class StoreController extends BaseController
         $pagination = $this->getPagination($products, self::PAGINATION, $request->input('page'), $request->all());
 
         return View::make('store.index')
+            ->withMaxValue($maxValue)
             ->withProducts($pagination->items())
             ->withProductCollection($products)
             ->withCategories($categories)
