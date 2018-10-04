@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Redis;
-use Rap2hpoutre\FastExcel\FastExcel;
+use Storage;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\View;
-
+use Rap2hpoutre\FastExcel\FastExcel;
 
 class StoreController extends BaseController
 {
@@ -19,7 +19,16 @@ class StoreController extends BaseController
 
     public function index(Request $request)
     {
-        $products = (new FastExcel)->import(sprintf('%s%s',env('LIST_XLSX_PATH'),'lista.xlsx'));
+        $products = Redis::get('database');
+
+        if (!$products) {
+            $products = (new FastExcel)->import(sprintf('%s%s',env('LIST_XLSX_PATH'), 'lista.xlsx'));
+            $products = json_encode($products);
+            Redis::set('database', $products);
+        }
+
+        $products = new Collection(json_decode($products, true));
+
         $maxValue = round($products->max('RE Vende por'));
         $categories = $products->groupBy('Categoria');
 
