@@ -22,6 +22,8 @@
 </head>
 <body class="page-@yield('class-pg')">
 <header>
+    <img src="topo.jpg" class="imageLogo img-fluid">
+    <!--
     <div class="left">
         <div class="imagePromo">imagem</div>
         <div class="infoRectangle bg-gold">
@@ -39,11 +41,29 @@
         <div class="imageLogo">
             imagem
         </div>
-    </div>
+    </div>-->
 </header>
-<div class="container container-site">
+<style>
+.container-site-white {
+    background-color: white;
+}
+.container-footer{
+    margin: 30px auto;
+}
+</style>
+
+
+<div class="container container-site container-site-white">
     <div class="row">
-        <nav class="order-last order-sm-first col-12 col-md-4 col-xl-3 sidebar">
+        <div class="col-12 col-md-4 col-xl-3">
+            @yield('upperbar')
+        </div>
+        <div class="col-12 col-md-8 col-xl-9">
+            @yield('order')
+        </div>
+    </div>
+    <div class="row">
+        <nav class="order-sm-first col-12 col-md-4 col-xl-3 sidebar">
             @yield('sidebar')
         </nav>
         <div class="col-12 col-md-8 col-xl-9">
@@ -52,5 +72,11 @@
     </div>
 </div>
 <link href="{{mix('css/app.css')}}" rel="stylesheet">
+
+<footer class="container container-footer">
+    <div class="row">
+        @yield('footer')
+    </div>
+</footer>
 </body>
 </html>
