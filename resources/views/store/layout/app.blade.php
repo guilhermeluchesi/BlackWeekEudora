@@ -22,7 +22,7 @@
 </head>
 <body class="page-@yield('class-pg')">
 <header>
-    <img src="topo.jpg" class="imageLogo">
+    <img src="topo.jpg" class="imageLogo img-fluid">
     <!--
     <div class="left">
         <div class="imagePromo">imagem</div>
@@ -45,7 +45,7 @@
 </header>
 <style>
 .container-site-white {
-    background-color: black;
+    background-color: white;
 }
 </style>
 
