@@ -47,10 +47,21 @@
 .container-site-white {
     background-color: white;
 }
+.container-footer{
+    margin: 30px auto;
+}
 </style>
 
 
 <div class="container container-site container-site-white">
+    <div class="row">
+        <div class="col-12 col-md-4 col-xl-3">
+            @yield('upperbar')
+        </div>
+        <div class="col-12 col-md-8 col-xl-9">
+            @yield('order')
+        </div>
+    </div>
     <div class="row">
         <nav class="order-sm-first col-12 col-md-4 col-xl-3 sidebar">
             @yield('sidebar')
@@ -62,8 +73,10 @@
 </div>
 <link href="{{mix('css/app.css')}}" rel="stylesheet">
 
-<footer>
-
+<footer class="container container-footer">
+    <div class="row">
+        @yield('footer')
+    </div>
 </footer>
 </body>
 </html>

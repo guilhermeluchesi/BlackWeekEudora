@@ -3,8 +3,8 @@
 @section('title','MK1')
 @section('class-pg','MK1')
 
-@section('sidebar')
-    <div class="row">
+@section('upperbar')
+    <div class="">
         <h2 class="txt-gold col-12">Procurar um produto</h2>
         <form class="col-12" action="/">
             <div class="input-group ">
@@ -16,6 +16,28 @@
             </div>
         </form>
     </div>
+@stop
+
+@section('order')
+    <div class="row">
+        <div class="col-md-9"></div>
+        <h2 class="txt-gold float-right">Ordenar Por</h2>
+        <div class="col-md-9"></div>
+        <div class="row">
+        <form action="/">
+            <select onchange="this.form.submit()" class="custom-select" name="orderBy">
+                <option value="RE Vende por" selected><b>Menor</b> preço</option>
+                <option value="-RE Vende por"><b>Maior</b> preço</option>
+                <option value="% de Desconto"><b>Menor</b> desconto</option>
+                <option value="-% de Desconto"><b>Maior</b> desconto</option>
+                <option value="Produto">Produto</option>
+            </select>
+        </form>
+        </div>
+    </div>
+@stop
+
+@section('sidebar')
     <div class="row">
         <h2 class="txt-gold">Categorias</h2>
         <nav class="sidebar-menu border-rounded bg-gold">
@@ -64,21 +86,12 @@
             <span class="right"><font color="black"> R$ {!!$maxValue!!}</font></span>
         </form>
     </div>
-    <div class="row">
-        <h2 class="txt-gold">Ordenar Por</h2>
-        <form action="/">
-        <select onchange="this.form.submit()" class="custom-select" name="orderBy">
-            <option value="RE Vende por" selected><b>Menor</b> preço</option>
-            <option value="-RE Vende por"><b>Maior</b> preço</option>
-            <option value="% de Desconto"><b>Menor</b> desconto</option>
-            <option value="-% de Desconto"><b>Maior</b> desconto</option>
-            <option value="Produto">Produto</option>
-        </select>
-        </form>
-    </div>
     <div class="row col-12 side-image">
         <img class="img-fluid" src="side_image.jpg"></img>
     </div>
+        <div class="col-7 col-md-8 col-xl-12 text-center">
+            <a class="btn-white bg-purple" href="#"><font color="white">Quero revender</font></a>
+        </div>
 @stop
 
 
@@ -111,18 +124,18 @@
                     </div>
                     <div class="product-card-container-footer">
                         <div class="row">
-                            <div class="col-12 col-md-6 col-xl-5">
+                            <div class="col-12 col-md-6 col-xl-7">
                                 <span
                                     class="price-card-from"><font
                                         color="black"> DE:
-                                        <b>R${!!array_get($product, 'Valor do Guia')!!}</font></b></span>
+                                      <strike><b>R${!!array_get($product, 'Valor do Guia')!!}</font></b></strike></span>
                                 <span
-                                    class="price-card-to"><font color="red">
+                                    class="price-card-to"><font color="red" size="+1">
                                         POR: <b>R${!!array_get($product, 'Preço Promocionado')!!}</font></b></span>
                             </div>
-                            <div class="col-5 col-md-6 col-xl-7 text-center">
-                                <a class="btn-white bg-purple" href="#"><font color="white">Comprar</font></a>
-                            </div>
+                        </div>
+                        <div class="col-7 col-md-8 col-xl-12 text-center">
+                            <a class="btn-white bg-purple" href="#"><font color="white">Comprar com uma representante</font></a>
                         </div>
                     </div>
                 </div>
@@ -130,4 +143,16 @@
         @endForeach
     </div>
     <div class="text-center"><a class="btn-white bg-white txt-grey" href="{{$pagination->nextPageUrl().'&type='.Request::input('type')}}">Carregar Mais</a></div>
+@stop
+
+@section('footer')
+    <div class="col-12 col-sm-6 col-xl-4">
+        <div class="row">
+            asdadsa
+        </div>
+        <div class="row">
+            asdasdadasads
+        </div>
+    </div>
+
 @stop
