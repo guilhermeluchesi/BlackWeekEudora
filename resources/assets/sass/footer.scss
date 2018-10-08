@@ -1,0 +1,31 @@
+footer {
+    color: white;
+    a {
+        color: white;
+        margin: 0 0 15px;
+        display: block;
+    }
+
+    h2 {
+        margin: 25px 0 15px;
+    }
+
+    .logo-eudora {
+        margin-top: 160px;
+    }
+
+    .copyright {
+        font-size: 10px;
+    }
+}
+
+.social-networks {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    a {
+        display: inline-block;
+        padding: 0 30px;
+    }
+}

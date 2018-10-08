@@ -44,12 +44,13 @@
     </div>-->
 </header>
 <style>
-.container-site-white {
-    background-color: white;
-}
-.container-footer{
-    margin: 30px auto;
-}
+    .container-site-white {
+        background-color: white;
+    }
+
+    .container-footer {
+        margin: 30px auto;
+    }
 </style>
 
 
@@ -74,9 +75,7 @@
 <link href="{{mix('css/app.css')}}" rel="stylesheet">
 
 <footer class="container container-footer">
-    <div class="row">
         @yield('footer')
-    </div>
 </footer>
 </body>
 </html>

@@ -79,6 +79,20 @@ h2.product-card-title {
 
 .price-card-from {
     display: block;
+    font-size: 13px;
+    text-decoration: line-through;
+}
+
+.price-card-to {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.btn.bg-purple {
+    color: white;
+    font-weight: bold;
+    line-height: 1.2;
 }
 
 @media (max-width: 1024px) and(min-width: 769px) {

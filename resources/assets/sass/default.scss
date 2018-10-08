@@ -1,10 +1,10 @@
 body {
-    color: white;
-    background: radial-gradient(ellipse at center, #5a5e5b 0%,#2f2f2d 100%);
+   /* background: radial-gradient(ellipse at center, #5a5e5b 0%, #2f2f2d 100%);*/
+
 }
 
-.container-site{
-    margin: 30px auto;
+.container-site {
+    padding: 40px 15px 80px;
 }
 
 h2 {
@@ -50,7 +50,7 @@ h2 {
     border-radius: 15px;
 }
 
-a{
+a {
     transition: 0.15s;
 }
 
