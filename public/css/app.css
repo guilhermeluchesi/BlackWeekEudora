@@ -10546,6 +10546,11 @@ a.bg-gold:hover,
   background-color: white;
 }
 
+.bg-purple {
+  color: white;
+  background-color: purple;
+}
+
 .container-footer {
   margin: 30px auto;
 }

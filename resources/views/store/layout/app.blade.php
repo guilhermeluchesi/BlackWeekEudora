@@ -21,16 +21,26 @@
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>-->
 </head>
 <body class="page-@yield('class-pg')">
-<div class="d-sm-none">
-    <div class="row">
-        @include('store.includes.order')
-    </div>
-    @include('store.includes.search')
-    @include('store.includes.category')
-    @include('store.includes.price')
-</div>
 <header>
-    <img src="topo.jpg" class="imageLogo img-fluid">
+    <div class="col-12 bg-purple">
+        <div class="container col-12">
+            <div class="row">
+                <div class="col-1">menu</div>
+                <div class="col-1 offset-1">logo</div>
+                <div class="col-1">teste</div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <div class="bg-white menu-content">
+        <div class="row">
+            @include('store.includes.order')
+        </div>
+        @include('store.includes.search')
+        @include('store.includes.category')
+        @include('store.includes.price')
+    </div>
     <!--
     <div class="left">
         <div class="imagePromo">imagem</div>
@@ -52,6 +62,9 @@
     </div>-->
 </header>
 
+<div class="row">
+    <img src="topo.jpg" class="imageLogo img-fluid">
+</div>
 <div class="container container-site container-site-white">
     <div class="row">
         <nav class="order-sm-first col-xl-3 col-12 col-md-4 d-md-block d-none sidebar">
