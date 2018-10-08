@@ -21,26 +21,35 @@
     <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>-->
 </head>
 <body class="page-@yield('class-pg')">
-<header>
-    <div class="col-12 bg-purple">
-        <div class="container col-12">
-            <div class="row">
-                <div class="col-1">menu</div>
-                <div class="col-1 offset-1">logo</div>
-                <div class="col-1">teste</div>
-            </div>
-            <div class="row">
-            </div>
-        </div>
+<header class="c-menu-mobile">
+    <div class="c-menu-mobile__container c-menu-mobile__container--buttons">
+        <div class="c-menu-mobile__items c-menu-mobile__menu">menu</div>
+        <div class="c-menu-mobile__items">logo</div>
+        <div class="c-menu-mobile__items">teste</div>
     </div>
-    <div class="bg-white menu-content">
+    <div class="c-menu-mobile__container">
+        <input type="text" class="c-menu-mobile__search" placeholder="Hoje eu quero..." />
+    </div>
+</header>
+<div class="c-menu-options c-menu-options__hidden">
+    <div class="c-menu-options__container">
+        @include('store.includes.search')
+    </div>
+    <div class="c-menu-options__container">
+        @include('store.includes.category')
+    </div>
+    <div class="c-menu-options__container">
+        @include('store.includes.price')
+    </div>
+</div>
+    <!-- <div class="bg-white menu-content">
         <div class="row">
             @include('store.includes.order')
         </div>
         @include('store.includes.search')
         @include('store.includes.category')
         @include('store.includes.price')
-    </div>
+    </div> -->
     <!--
     <div class="left">
         <div class="imagePromo">imagem</div>
@@ -60,11 +69,9 @@
             imagem
         </div>
     </div>-->
-</header>
 
-<div class="row">
-    <img src="topo.jpg" class="imageLogo img-fluid">
-</div>
+
+<img src="topo.jpg" class="imageLogo img-fluid">
 <div class="container container-site container-site-white">
     <div class="row">
         <nav class="order-sm-first col-xl-3 col-12 col-md-4 d-md-block d-none sidebar">
@@ -80,5 +87,23 @@
     @yield('footer')
 </footer>
 <link href="{{mix('css/app.css')}}" rel="stylesheet">
+
+<script>
+    const menu = document.querySelector('.c-menu-mobile__menu');
+    const menuContainer = document.querySelector('.c-menu-options');
+    let flag = false;
+    menu.onclick = () => {
+        menuContainer.classList.toggle('c-menu-options__hidden');
+        flag = !flag;
+    }
+
+    window.onresize = () => {
+        if(flag) {
+        menuContainer.classList.toggle('c-menu-options__hidden');
+        flag = !flag;
+        
+        }
+    }
+</script>
 </body>
 </html>

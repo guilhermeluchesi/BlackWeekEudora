@@ -10865,3 +10865,71 @@ footer .copyright {
   padding: 0 30px;
 }
 
+.c-menu-mobile {
+  background-color: #603272;
+  max-height: 130px;
+  width: 100%;
+  display: block;
+}
+
+@media screen and (min-width: 480px) {
+  .c-menu-mobile {
+    display: none;
+  }
+}
+
+.c-menu-mobile__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.c-menu-mobile__container--buttons {
+  padding: 30px 0;
+}
+
+.c-menu-mobile__menu {
+  background-position: center;
+  background-image: url(https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png);
+  background-size: 100%;
+}
+
+.c-menu-mobile__items {
+  display: block;
+}
+
+.c-menu-mobile__search {
+  width: 70%;
+  border-radius: 10px;
+  border: 0;
+  padding: 5px;
+  outline: none;
+}
+
+.c-menu-mobile__search::after {
+  display: block;
+  content: '';
+  background-color: red;
+  width: 10px;
+}
+
+.c-menu-options {
+  background-color: white;
+  width: 90%;
+  min-height: 800px;
+  height: 100%;
+  padding: 40px;
+  position: absolute;
+  z-index: 2;
+}
+
+.c-menu-options__container {
+  margin-bottom: 50px;
+}
+
+.c-menu-options__hidden {
+  display: none;
+}
+
