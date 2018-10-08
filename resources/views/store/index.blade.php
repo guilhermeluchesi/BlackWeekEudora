@@ -4,68 +4,11 @@
 @section('class-pg','MK1')
 
 @section('sidebar')
-    <div class="row">
-        <h2 class="txt-gold col-12">Procurar um produto</h2>
-        <form class="col-12" action="/">
-            <div class="input-group ">
-                <input type="text" class="form-control"
-                       value="{{Request::input('search')}}" placeholder="" name="search">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit button">Buscar</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="row">
-        <h2 class="txt-gold col-12">Categorias</h2>
-        <nav class="sidebar-menu border-rounded bg-gold">
-            @foreach($categories as $key => $category)
-                <a href="{{'/?type='.$key}}">
-                    <img class="menu-side-image" src="menu_side/{!!mb_strtolower($key)!!}.svg"></img>
-                    <i class="fa fa-search"></i>
-                    <span class="sidebar-menu-txt">{!!mb_strtolower($key)!!}</span>
-                    <span class="sidebar-menu-count">({{$category->count()}})</span>
-                </a>
-            @endForeach
-        </nav>
-    </div>
-
-    <script>
-        function evalSlider() {
-            var sliderValue = document.getElementById('rating').value;
-            document.getElementById('sliderVal').innerHTML = 'R$ ' + sliderValue;
-        }
-
-    </script>
-
-    <style>
-        .right {
-            float: right;
-        }
-
-        .side-image {
-            max-height: 200px;
-        }
-
-        .menu-side-image {
-            max-height: 50px;
-            max-width: 50px;
-        }
-    </style>
-
-    <div class="row">
-        <h2 class="txt-gold col-12">Faixa de preço</h2>
-        <form class="col-12" action="/" id="sliderForm">
-            <div class="input-group">
-                <input name="slider" type="range" class="custom-range" min="1"
-                       max="{!!$maxValue!!}" id="rating" onmousemove="evalSlider()" onchange="this.form.submit()">
-            </div>
-            <output id="sliderVal"><font color="black">R$ 100</font></output>
-            <span class="right"><font color="black"> R$ {!!$maxValue!!}</font></span>
-        </form>
-    </div>
+    @include('store.includes.search')
+    @include('store.includes.category')
+    @include('store.includes.price')
     <div class="row col-12 side-image">
-        <img class="img-fluid" src="side_image.jpg"></img>
+        <img class="img-fluid" src="side_image.jpg"/>
     </div>
     <div class="col-7 col-md-8 col-xl-12 text-center">
         <a class="btn bg-purple txt-white" href="#">Quero revender</a>
@@ -74,17 +17,8 @@
 
 @section('content')
     <div class="row">
-        <div class="offset-md-9 mb-4">
-            <h2 class="txt-gold">Ordenar Por</h2>
-            <form action="/">
-                <select onchange="this.form.submit()" class="custom-select" name="orderBy">
-                    <option value="RE Vende por" selected><b>Menor</b> preço</option>
-                    <option value="-RE Vende por"><b>Maior</b> preço</option>
-                    <option value="% de Desconto"><b>Menor</b> desconto</option>
-                    <option value="-% de Desconto"><b>Maior</b> desconto</option>
-                    <option value="Produto">Produto</option>
-                </select>
-            </form>
+        <div class="offset-md-9 d-sm-none mb-4">
+            @include('store.includes.order')
         </div>
     </div>
     <div class="row">
@@ -154,4 +88,12 @@
             <span class="copyright">&copy; EUDORA. Todos os direitos reservados.</span>
         </div>
     </div>
+
+    <script>
+        function evalSlider() {
+            var sliderValue = document.getElementById('rating').value;
+            document.getElementById('sliderVal').innerHTML = 'R$ ' + sliderValue;
+        }
+
+    </script>
 @stop

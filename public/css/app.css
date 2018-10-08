@@ -10542,6 +10542,27 @@ a.bg-gold:hover,
   text-align: center;
 }
 
+.container-site-white {
+  background-color: white;
+}
+
+.container-footer {
+  margin: 30px auto;
+}
+
+.right {
+  float: right;
+}
+
+.side-image {
+  max-height: 200px;
+}
+
+.menu-side-image {
+  max-height: 50px;
+  max-width: 50px;
+}
+
 header {
   border: 1px solid black;
   width: 100%;
