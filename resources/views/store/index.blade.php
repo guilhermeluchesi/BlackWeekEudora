@@ -3,8 +3,8 @@
 @section('title','MK1')
 @section('class-pg','MK1')
 
-@section('upperbar')
-    <div class="">
+@section('sidebar')
+    <div class="row">
         <h2 class="txt-gold col-12">Procurar um produto</h2>
         <form class="col-12" action="/">
             <div class="input-group ">
@@ -16,30 +16,8 @@
             </div>
         </form>
     </div>
-@stop
-
-@section('order')
     <div class="row">
-        <div class="col-md-9"></div>
-        <h2 class="txt-gold float-right">Ordenar Por</h2>
-        <div class="col-md-9"></div>
-        <div class="row">
-            <form action="/">
-                <select onchange="this.form.submit()" class="custom-select" name="orderBy">
-                    <option value="RE Vende por" selected><b>Menor</b> preço</option>
-                    <option value="-RE Vende por"><b>Maior</b> preço</option>
-                    <option value="% de Desconto"><b>Menor</b> desconto</option>
-                    <option value="-% de Desconto"><b>Maior</b> desconto</option>
-                    <option value="Produto">Produto</option>
-                </select>
-            </form>
-        </div>
-    </div>
-@stop
-
-@section('sidebar')
-    <div class="row">
-        <h2 class="txt-gold">Categorias</h2>
+        <h2 class="txt-gold col-12">Categorias</h2>
         <nav class="sidebar-menu border-rounded bg-gold">
             @foreach($categories as $key => $category)
                 <a href="{{'/?type='.$key}}">
@@ -76,7 +54,7 @@
     </style>
 
     <div class="row">
-        <h2 class="txt-gold">Faixa de preço</h2>
+        <h2 class="txt-gold col-12">Faixa de preço</h2>
         <form class="col-12" action="/" id="sliderForm">
             <div class="input-group">
                 <input name="slider" type="range" class="custom-range" min="1"
@@ -95,6 +73,20 @@
 @stop
 
 @section('content')
+    <div class="row">
+        <div class="offset-md-9 mb-4">
+            <h2 class="txt-gold">Ordenar Por</h2>
+            <form action="/">
+                <select onchange="this.form.submit()" class="custom-select" name="orderBy">
+                    <option value="RE Vende por" selected><b>Menor</b> preço</option>
+                    <option value="-RE Vende por"><b>Maior</b> preço</option>
+                    <option value="% de Desconto"><b>Menor</b> desconto</option>
+                    <option value="-% de Desconto"><b>Maior</b> desconto</option>
+                    <option value="Produto">Produto</option>
+                </select>
+            </form>
+        </div>
+    </div>
     <div class="row">
         @foreach($products as $product)
             <div class="col-12 col-sm-6 col-xl-4">
@@ -124,7 +116,8 @@
         @endForeach
     </div>
     <div class="text-center">
-        <a class="btn-load btn bg-purple txt-white" href="{{$pagination->nextPageUrl().'&type='.Request::input('type')}}">Carregar
+        <a class="btn-load btn bg-purple txt-white"
+           href="{{$pagination->nextPageUrl().'&type='.Request::input('type')}}">Carregar
             Mais</a>
     </div>
 @stop
