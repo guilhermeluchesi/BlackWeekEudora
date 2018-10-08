@@ -22,7 +22,25 @@
 </head>
 <body class="page-@yield('class-pg')">
 <header>
-    <img src="topo.jpg" class="imageLogo img-fluid">
+    <div class="col-12 bg-purple">
+        <div class="container col-12">
+            <div class="row">
+                <div class="col-1">menu</div>
+                <div class="col-1 offset-1">logo</div>
+                <div class="col-1">teste</div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <div class="bg-white menu-content">
+        <div class="row">
+            @include('store.includes.order')
+        </div>
+        @include('store.includes.search')
+        @include('store.includes.category')
+        @include('store.includes.price')
+    </div>
     <!--
     <div class="left">
         <div class="imagePromo">imagem</div>
@@ -43,40 +61,24 @@
         </div>
     </div>-->
 </header>
-<style>
-.container-site-white {
-    background-color: white;
-}
-.container-footer{
-    margin: 30px auto;
-}
-</style>
 
-
+<div class="row">
+    <img src="topo.jpg" class="imageLogo img-fluid">
+</div>
 <div class="container container-site container-site-white">
     <div class="row">
-        <div class="col-12 col-md-4 col-xl-3">
-            @yield('upperbar')
-        </div>
-        <div class="col-12 col-md-8 col-xl-9">
-            @yield('order')
-        </div>
-    </div>
-    <div class="row">
-        <nav class="order-sm-first col-12 col-md-4 col-xl-3 sidebar">
+        <nav class="order-sm-first col-xl-3 col-12 col-md-4 d-md-block d-none sidebar">
             @yield('sidebar')
         </nav>
-        <div class="col-12 col-md-8 col-xl-9">
+        <div class="col-12 col-xl-9 col-md-8 col-sm-12">
             @yield('content')
         </div>
     </div>
 </div>
-<link href="{{mix('css/app.css')}}" rel="stylesheet">
 
 <footer class="container container-footer">
-    <div class="row">
-        @yield('footer')
-    </div>
+    @yield('footer')
 </footer>
+<link href="{{mix('css/app.css')}}" rel="stylesheet">
 </body>
 </html>
