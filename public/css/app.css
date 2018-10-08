@@ -10509,7 +10509,7 @@ h2 {
 }
 
 .btn {
-  padding: 3px 23px;
+  padding: 5px 23px;
   text-transform: uppercase;
 }
 
@@ -10686,6 +10686,11 @@ header .right .imageLogo {
   font-size: 10px;
 }
 
+.product-card-container-footer span {
+  text-align: left;
+  padding-left: 25%;
+}
+
 h2.product-card-title {
   font-size: 11px;
   font-weight: normal;
@@ -10765,8 +10770,14 @@ h2.product-card-title {
 
 .btn.bg-purple {
   color: white;
+  background-color: purple;
   font-weight: bold;
   line-height: 1.2;
+}
+
+.btn-load {
+  padding: 1% 10%;
+  margin-top: 40px;
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {

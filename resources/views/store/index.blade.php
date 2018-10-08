@@ -90,20 +90,9 @@
         <img class="img-fluid" src="side_image.jpg"></img>
     </div>
     <div class="col-7 col-md-8 col-xl-12 text-center">
-        <a class="btn-white bg-purple" href="#"><font color="white">Quero revender</font></a>
+        <a class="btn bg-purple txt-white" href="#">Quero revender</a>
     </div>
 @stop
-
-
-<style>
-    .bg-purple {
-        background-color: purple;
-    }
-
-    .bg-black {
-        background-color: black;
-    }
-</style>
 
 @section('content')
     <div class="row">
@@ -135,7 +124,7 @@
         @endForeach
     </div>
     <div class="text-center">
-        <a class="btn bg-purple txt-white" href="{{$pagination->nextPageUrl().'&type='.Request::input('type')}}">Carregar
+        <a class="btn-load btn bg-purple txt-white" href="{{$pagination->nextPageUrl().'&type='.Request::input('type')}}">Carregar
             Mais</a>
     </div>
 @stop
