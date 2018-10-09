@@ -53,7 +53,7 @@ class StoreController extends BaseController
         }
 
         if ($request->has('slider')) {
-            $products = $products->where('RE Vende por', '>', $request->input('slider'));
+            $products = $products->where('RE Vende por', '<', $request->input('slider'));
         }
 
         $pagination = $this->getPagination($products, self::PAGINATION, $request->input('page'), $request->all());

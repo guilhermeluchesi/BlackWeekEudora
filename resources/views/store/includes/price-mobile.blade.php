@@ -5,13 +5,13 @@
             <input name="slider" type="range" class="custom-range" value="{{Request::input('slider')}}" min="1" max="{!!$maxValue!!}" id="ratingmobile" ontouchmove="evalSliderMobile()" onchange="this.form.submit()">
         </div>
         @php
-            $value = 100;
+            $value = $maxValue;
             if (Request::input('slider')) {
                 $value = Request::input('slider');
             }
 
         @endphp
-        <output id="sliderValMobile">R$ {{$value}}</output>
-        <span class="right"><font color="black"> R$ {!!$maxValue!!}</font></span>
+        <output >R$ 0</output>
+        <span class="right" id="sliderVal">R$ {!!$value!!}</font>
     </form>
 </div>

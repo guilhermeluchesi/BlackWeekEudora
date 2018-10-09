@@ -28,7 +28,7 @@
     <div class="c-menu-mobile__container c-menu-mobile__container--buttons">
         <div class="c-menu-mobile__items c-menu-mobile__menu">menu</div>
         <div class="c-menu-mobile__items">logo</div>
-        <div class="c-menu-mobile__items">teste</div>
+        <div class="c-menu-mobile__items">logo</div>
     </div>
     <div class="c-menu-mobile__container">
         <form class="col-12" action="/">
