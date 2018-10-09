@@ -139,12 +139,4 @@
         </div>
     </div>
     </div>
-
-    <script>
-        function evalSlider() {
-            var sliderValue = document.getElementById('rating').value;
-            document.getElementById('sliderVal').innerHTML = 'R$ ' + sliderValue;
-        }
-
-    </script>
 @stop

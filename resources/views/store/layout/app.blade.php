@@ -41,7 +41,7 @@
         @include('store.includes.category')
     </div>
     <div class="c-menu-options__container">
-        @include('store.includes.price')
+        @include('store.includes.price-mobile')
     </div>
     <div class="c-menu-options__container">
         @include('store.includes.order')
@@ -111,6 +111,18 @@
         flag = !flag;
         }
     }
+
+function evalSlider()
+{
+    var sliderValue = document.getElementById('rating').value;
+    document.getElementById('sliderVal').innerHTML = 'R$ '+sliderValue;
+}
+
+function evalSliderMobile()
+{
+    var sliderValue = document.getElementById('rating-mobile').value;
+    document.getElementById('sliderValMobile').innerHTML = 'R$ '+sliderValue;
+}
 </script>
 </body>
 </html>
