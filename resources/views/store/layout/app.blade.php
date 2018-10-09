@@ -31,7 +31,9 @@
         <div class="c-menu-mobile__items">teste</div>
     </div>
     <div class="c-menu-mobile__container">
-        <input type="text" class="c-menu-mobile__search" placeholder="Hoje eu quero..." />
+        <form class="col-12" action="/">
+            <input type="text" name="search" class="c-menu-mobile__search" placeholder="Hoje eu quero..." />
+        </form>
     </div>
 </header>
 <div class="c-menu-options c-menu-options__hidden">
@@ -42,7 +44,7 @@
         @include('store.includes.category')
     </div>
     <div class="c-menu-options__container">
-        @include('store.includes.price')
+        @include('store.includes.price-mobile')
     </div>
     <div class="c-menu-options__container">
         @include('store.includes.order')
@@ -111,6 +113,18 @@
         flag = !flag;
         }
     }
+
+function evalSlider()
+{
+    var sliderValue = document.getElementById('rating').value;
+    document.getElementById('sliderVal').innerHTML = 'R$ '+sliderValue;
+}
+
+function evalSliderMobile()
+{
+    var sliderValue = document.getElementById('rating-mobile').value;
+    document.getElementById('sliderValMobile').innerHTML = 'R$ '+sliderValue;
+}
 </script>
 </body>
 </html>
