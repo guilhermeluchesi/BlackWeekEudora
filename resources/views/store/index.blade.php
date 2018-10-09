@@ -1,6 +1,6 @@
 @extends('store.layout.app')
 
-@section('title','MK1')
+@section('title','Blackweek - Eudora')
 @section('class-pg','MK1')
 
 @section('sidebar')
