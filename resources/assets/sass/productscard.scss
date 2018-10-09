@@ -93,6 +93,13 @@ h2.product-card-title {
     display: block;
 }
 
+.btn.bg-purple-load {
+    color: white;
+    background-color: purple;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
 .btn.bg-purple {
     color: white;
     background-color: purple;
@@ -117,8 +124,67 @@ h2.product-card-title {
     }
 }
 
+@media (min-width: 425px) {
+    .promo-app {
+        display:none;
+    }
+}
+
+.promo-app {
+    padding-top:10px;
+}
+
+@media (max-width:425px) {
+    .footer-eudora-logos {
+        display:none;
+    }
+
+    .mobile-hide {
+        display:none;
+        visibility: hidden;
+    }
+}
+
 @media(max-width: 321px) {
     .discount-seal {
         padding: 7% 4%;
+    }
+}
+
+@media(max-width: 425px) {
+   .btn.bg-purple {
+        font-size: 2vw;
+    }
+}
+
+@media(min-width: 425px) {
+   .footer-mobile {
+        display:none;
+    }
+}
+
+@media(max-width: 425px) {
+   .txt-red {
+        font-size: 4vw;
+    }
+
+   .txt-grey{
+        font-size:3vw;
+   }
+
+   .product-description {
+        font-size:3vw;
+   }
+
+    .product-card {
+        padding: 5px;
+    }
+
+    .card-margin {
+        padding: 2px;
+    }
+
+    .footer-txt-mobile {
+        text-align: center;
     }
 }

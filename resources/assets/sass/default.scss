@@ -54,9 +54,17 @@ a {
     transition: 0.15s;
 }
 
+.font-white {
+    color: white;
+}
+
 a.bg-gold, .bg-gold a {
     color: $grey;
     transition: 0.15s;
+}
+
+.bg-grey {
+    background-color:grey;
 }
 
 a.bg-gold:hover, .bg-gold a:hover {

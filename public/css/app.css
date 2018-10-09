@@ -10522,11 +10522,19 @@ a {
   transition: 0.15s;
 }
 
+.font-white {
+  color: white;
+}
+
 a.bg-gold,
 .bg-gold a {
   color: #222222;
   -webkit-transition: 0.15s;
   transition: 0.15s;
+}
+
+.bg-grey {
+  background-color: grey;
 }
 
 a.bg-gold:hover,
@@ -10794,6 +10802,13 @@ h2.product-card-title {
   display: block;
 }
 
+.btn.bg-purple-load {
+  color: white;
+  background-color: purple;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
 .btn.bg-purple {
   color: white;
   background-color: purple;
@@ -10818,9 +10833,68 @@ h2.product-card-title {
   }
 }
 
+@media (min-width: 425px) {
+  .promo-app {
+    display: none;
+  }
+}
+
+.promo-app {
+  padding-top: 10px;
+}
+
+@media (max-width: 425px) {
+  .footer-eudora-logos {
+    display: none;
+  }
+
+  .mobile-hide {
+    display: none;
+    visibility: hidden;
+  }
+}
+
 @media (max-width: 321px) {
   .discount-seal {
     padding: 7% 4%;
+  }
+}
+
+@media (max-width: 425px) {
+  .btn.bg-purple {
+    font-size: 2vw;
+  }
+}
+
+@media (min-width: 425px) {
+  .footer-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .txt-red {
+    font-size: 4vw;
+  }
+
+  .txt-grey {
+    font-size: 3vw;
+  }
+
+  .product-description {
+    font-size: 3vw;
+  }
+
+  .product-card {
+    padding: 5px;
+  }
+
+  .card-margin {
+    padding: 2px;
+  }
+
+  .footer-txt-mobile {
+    text-align: center;
   }
 }
 
@@ -10840,6 +10914,11 @@ footer h2 {
 
 footer .logo-eudora {
   margin-top: 160px;
+}
+
+footer .logo-eudora-mobile {
+  max-height: 17px;
+  max-width: 17px;
 }
 
 footer .copyright {
@@ -10863,6 +10942,58 @@ footer .copyright {
 .social-networks a {
   display: inline-block;
   padding: 0 30px;
+}
+
+.txt-mobile-footer-small {
+  text-align: center;
+  font-size: 12px;
+}
+
+.txt-mobile-footer-smallest {
+  text-align: center;
+  font-size: 10px;
+}
+
+.social-networks-mobile {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.social-networks-mobile a {
+  display: inline-block;
+  padding: 0 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mobile-end-logos {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.end-footer-txt-mobile {
+  font-size: 7px;
 }
 
 .c-menu-mobile {

@@ -14,6 +14,11 @@ footer {
         margin-top: 160px;
     }
 
+    .logo-eudora-mobile {
+        max-height:17px;
+        max-width:17px;
+    }
+
     .copyright {
         font-size: 10px;
     }
@@ -28,4 +33,41 @@ footer {
         display: inline-block;
         padding: 0 30px;
     }
+}
+
+.txt-mobile-footer-small {
+    text-align: center;
+    font-size: 12px;
+}
+
+.txt-mobile-footer-smallest {
+    text-align: center;
+    font-size: 10px;
+}
+
+.social-networks-mobile {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    a {
+        display: inline-block;
+        padding: 0 5px;
+        justify-content: center;
+    }
+}
+
+
+.mobile-end-logos {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+
+.end-footer-txt-mobile {
+    font-size:7px;
 }

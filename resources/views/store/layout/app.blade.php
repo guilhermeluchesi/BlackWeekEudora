@@ -41,6 +41,9 @@
     <div class="c-menu-options__container">
         @include('store.includes.price')
     </div>
+    <div class="c-menu-options__container">
+        @include('store.includes.order')
+    </div>
 </div>
     <!-- <div class="bg-white menu-content">
         <div class="row">
@@ -83,8 +86,11 @@
     </div>
 </div>
 
-<footer class="container container-footer">
+<footer class="container container-footer mobile-hide">
     @yield('footer')
+</footer>
+<footer class="container">
+    @yield('footer-mobile')
 </footer>
 <link href="{{mix('css/app.css')}}" rel="stylesheet">
 
@@ -101,7 +107,6 @@
         if(flag) {
         menuContainer.classList.toggle('c-menu-options__hidden');
         flag = !flag;
-        
         }
     }
 </script>
