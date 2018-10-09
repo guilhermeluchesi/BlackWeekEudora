@@ -37,9 +37,6 @@
 </header>
 <div class="c-menu-options c-menu-options__hidden">
     <div class="c-menu-options__container">
-        @include('store.includes.search')
-    </div>
-    <div class="c-menu-options__container">
         @include('store.includes.category')
     </div>
     <div class="c-menu-options__container">

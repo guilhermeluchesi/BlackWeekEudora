@@ -145,6 +145,12 @@ h2.product-card-title {
     }
 }
 
+@media(max-width:10px) {
+    .d-sm-none {
+        display:none;
+    }
+}
+
 @media(max-width: 321px) {
     .discount-seal {
         padding: 7% 4%;

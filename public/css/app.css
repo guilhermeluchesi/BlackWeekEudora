@@ -10581,10 +10581,6 @@ a.bg-gold:hover,
   max-width: 50px;
 }
 
-.hide-desk {
-  display: none;
-}
-
 header {
   border: 1px solid black;
   width: 100%;
@@ -10860,6 +10856,12 @@ h2.product-card-title {
   .mobile-hide {
     display: none;
     visibility: hidden;
+  }
+}
+
+@media (max-width: 10px) {
+  .d-sm-none {
+    display: none;
   }
 }
 
