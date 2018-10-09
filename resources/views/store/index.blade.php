@@ -98,12 +98,9 @@
             <a href="#">YOUTUBE</a>
         </div>
         <div class="mobile-end-logos">
-            <a href="#" class=""><img src="images/logo_eudora.png"></a>
-            <div>
-                <div class="row"></div>
-            <span class="end-footer-txt-mobile">2015 eudora. Todos os direitos reservados.</span>
-            </div>
-            <div>Grupoboticario</div>
+            <a href="#" class=""><img class="footer-image" src="images/logo_eudora.png"></a>
+            <span class="end-footer-txt-mobile">&copy; 2015 eudora. Todos os direitos reservados.</span>
+            <a href="#" class=""><img class="footer-image" src="images/logo_grupo_boticario.png"></a>
         </div>
     </div>
 @stop
