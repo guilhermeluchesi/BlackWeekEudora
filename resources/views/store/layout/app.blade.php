@@ -30,7 +30,9 @@
         <div class="c-menu-mobile__items">teste</div>
     </div>
     <div class="c-menu-mobile__container">
-        <input type="text" class="c-menu-mobile__search" placeholder="Hoje eu quero..." />
+        <form class="col-12" action="/">
+            <input type="text" name="search" class="c-menu-mobile__search" placeholder="Hoje eu quero..." />
+        </form>
     </div>
 </header>
 <div class="c-menu-options c-menu-options__hidden">
