@@ -12,6 +12,6 @@
 
         @endphp
         <output >R$ 0</output>
-        <span class="right" id="sliderVal">R$ {!!$value!!}</font>
+        <span class="right" id="sliderValMobile">R$ {!!$value!!}</font>
     </form>
 </div>
