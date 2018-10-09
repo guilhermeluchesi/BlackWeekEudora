@@ -119,8 +119,9 @@ function evalSlider()
 
 function evalSliderMobile()
 {
-    var sliderValue = document.getElementById('rating-mobile').value;
-    document.getElementById('sliderValMobile').innerHTML = 'R$ '+sliderValue;
+	console.log('sdasd')
+    var sliderValueMobile = document.getElementById('ratingmobile').value;
+    document.getElementById('sliderValMobile').innerHTML = 'R$ '+sliderValueMobile;
 }
 </script>
 </body>
