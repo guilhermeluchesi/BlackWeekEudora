@@ -1,4 +1,4 @@
-<div class="sidebar-menu">
+<div class="">
 <h2 class="txt-gold">Ordenar Por</h2>
 <form action="/">
     <select onchange="this.form.submit()" class="custom-select" name="orderBy">

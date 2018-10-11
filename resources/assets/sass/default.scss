@@ -5,6 +5,10 @@ body {
 
 .container-site {
     padding: 40px 15px 80px;
+
+    @media screen and (max-width: 481px) {
+        
+    }
 }
 
 h2 {
@@ -101,8 +105,9 @@ a.bg-gold:hover, .bg-gold a:hover {
 }
 
 .menu-side-image {
-    max-height: 50px;
-    max-width: 50px;
+    max-height: 25px;
+    max-width: 25px;
+    margin-right: 12px;
 }
 
 .footer-image {
