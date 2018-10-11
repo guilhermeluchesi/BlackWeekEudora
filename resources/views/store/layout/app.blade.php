@@ -27,7 +27,7 @@
 <header class="c-menu-mobile">
     <div class="c-menu-mobile__container c-menu-mobile__container--buttons">
         <div class="c-menu-mobile__items"><img src="images/menu.png" class="c-menu-mobile__items--home"/></div>
-        <div class="c-menu-mobile__items">logo</div>
+        <div class="c-menu-mobile__items"><img src="images/logoeudoramobile.png" class="c-menu-mobile--items--home-logo"/></div>
         <div class="c-menu-mobile__items"><img src="images/sacola.png" class="c-menu-mobile__items--home"/></div>
     </div>
     <div class="c-menu-mobile__container">
