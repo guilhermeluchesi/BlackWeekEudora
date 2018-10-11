@@ -26,9 +26,9 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5K34HK2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="c-menu-mobile">
     <div class="c-menu-mobile__container c-menu-mobile__container--buttons">
-        <div class="c-menu-mobile__items c-menu-mobile__menu">menu</div>
+        <div class="c-menu-mobile__items"><img src="images/menu.png" class="c-menu-mobile__items--home"/></div>
         <div class="c-menu-mobile__items">logo</div>
-        <div class="c-menu-mobile__items">logo</div>
+        <div class="c-menu-mobile__items"><img src="images/sacola.png" class="c-menu-mobile__items--home"/></div>
     </div>
     <div class="c-menu-mobile__container">
         <form class="col-12" action="/">
@@ -38,51 +38,41 @@
 </header>
 <div class="c-menu-options c-menu-options__hidden">
     <div class="c-menu-options__container">
+        @include('store.includes.order')
+    </div>
+    <div class="c-menu-options__container">
         @include('store.includes.category')
     </div>
     <div class="c-menu-options__container">
         @include('store.includes.price-mobile')
     </div>
-    <div class="c-menu-options__container">
-        @include('store.includes.order')
-    </div>
 </div>
-    <!-- <div class="bg-white menu-content">
-        <div class="row">
+<div class="banner__desktop">
+<img src="topo.jpg" class="imageLogo img-fluid">
+</div>
+<div class="banner__mobile">
+<img src="images/banner_mobile.png" class="imageLogo img-fluid">
+</div>
+<div class="container container-site container-site-white">
+    <div class="row">
+        <div class="order-sm-first col-xl-3 col-12 col-md-4 d-md-block d-none sidebar">
+            @include('store.includes.search')
+        </div>
+        <div class="order-sm-first col-xl-6 col-12 col-md-4 d-md-block d-none sidebar">
+        </div>
+        <div class="order-sm-first col-xl-3 col-12 col-md-4 d-md-block d-none sidebar">
             @include('store.includes.order')
         </div>
-        @include('store.includes.search')
-        @include('store.includes.category')
-        @include('store.includes.price')
-    </div> -->
-    <!--
-    <div class="left">
-        <div class="imagePromo">imagem</div>
-        <div class="infoRectangle bg-gold">
-            <div class="infoWrapper">
-                <span class="textInfo">Produtos a partir de:</span>
-                <div class="priceWrapper">
-                    <span class="moeda">R$</span>
-                    <span class="reais">6</span>
-                    <span class="centavos">,99</span>
-                </div>
-            </div>
-        </div>
     </div>
-    <div class="right">
-        <div class="imageLogo">
-            imagem
-        </div>
-    </div>-->
-
-
-<img src="topo.jpg" class="imageLogo img-fluid">
-<div class="container container-site container-site-white">
     <div class="row">
         <nav class="order-sm-first col-xl-3 col-12 col-md-4 d-md-block d-none sidebar">
             @yield('sidebar')
         </nav>
         <div class="col-12 col-xl-9 col-md-8 col-sm-12">
+            <p class="title__mobile">
+                <Strong>BLACK WEEK EUDORA</strong></br> Confira as promoções com os menores preços do ano.
+            </p>
+        
             @yield('content')
         </div>
     </div>

@@ -4,19 +4,18 @@
 @section('class-pg','MK1')
 
 @section('sidebar')
-    @include('store.includes.search')
     @include('store.includes.category')
     @include('store.includes.price')
-    <div class="row col-12 side-image">
-        <img class="img-fluid" src="side_image.jpg"/>
+    <div class="col-12 side-image">
+        <a class="" href="https://cadastro.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora"><img class="img-fluid" src="banner_lateral.png"/></a>
     </div>
-    <div class="col-7 col-md-8 col-xl-12 text-center">
+    <!-- <div class="col-7 col-md-8 col-xl-12 text-center">
         <a class="btn bg-purple txt-white" href="https://cadastro.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora">Quero revender</a>
-    </div>
+    </div> -->
 @stop
 
 @section('content')
-    <div class="row">
+    <div class="row d-md-block d-none">
         <div class="offset-md-9 d-sm-none mb-4 mobile-hide">
             @include('store.includes.order')
         </div>
@@ -65,7 +64,7 @@
 
     <div class="promo-app">
         <div class="col-12 side-image side-image-bottom">
-            <img class="img-fluid" src="bottom_image.jpg"/>
+            <img class="img-fluid border" style="border-color: #532685" src="bottom_image.jpg"/>
         </div>
     </div>
 @stop
@@ -114,7 +113,7 @@
     </div>
     <div class="row mobile-hide">
         <div class="col-12 col-md-2">
-            <h2>Atendimento</h2>
+            <h2>Eudora</h2>
             <a href="http://www.grupoboticario.com.br/pt/faca-beleza-com-a-gente/Paginas/Inicial.aspx?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=trabalhe-conosco">Trabalhe Conosco</a>
             <a href="https://eudoraconsumidor.zendesk.com/hc/pt-br?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=duvidas-frequentes">Dúvidas frequentes</a>
             <a href="https://cadastro.eudora.com.br/termos-de-uso?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=termos-de-uso">Termos de uso</a>
@@ -125,7 +124,7 @@
             0800 727 4535
         </div>
         <div class="col-12 col-md-2 offset-md-1">
-            <h2>Atendimento</h2>
+            <h2>Eudora</h2>
             <a href="https://loja.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=sou-consumidora">Sou consumidora</a>
             <a href="https://cadastro.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=quero-revender">Quero revender</a>
             <a href="http://guia.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=revista">Revista</a>

@@ -4,7 +4,7 @@
   width: 100%;
   display: block;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 481px) {
     display: none;
   }
 
@@ -25,6 +25,11 @@
 
   &__items {
     display: block;
+
+    &--home {
+      width: 25px;
+      height: 25px;
+    }
   }
 
   &__search {
@@ -40,5 +45,38 @@
       background-color: red;
       width: 10px;
     }
+  }
+}
+
+.banner__mobile {
+  padding: 0 20px;
+
+  @media screen and (min-width: 481px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 441px) {
+    padding: 0
+  }
+
+  img {
+    margin: 0 auto;
+  }
+}
+
+.banner__desktop {
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+}
+
+.title__mobile {
+  @media screen and (min-width: 481px) {
+    display: none;
+  }
+
+  strong {
+    font-size: 20px;
+    position: absolute;
   }
 }
