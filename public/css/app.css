@@ -10556,7 +10556,7 @@ a.bg-gold:hover,
 
 .bg-purple {
   color: white;
-  background-color: #753BBD;
+  background-color: #502787;
 }
 
 .container-footer {
@@ -10680,11 +10680,11 @@ header .right .imageLogo {
 }
 
 .bg-purple {
-  background-color: #753BBD !important;
+  background-color: #502787 !important;
 }
 
 .bg-purple-load {
-  background-color: #753BBD !important;
+  background-color: #502787 !important;
 }
 
 .sidebar > .row {
@@ -10818,14 +10818,14 @@ h2.product-card-title {
 
 .btn.bg-purple-load {
   color: white;
-  background-color: purple;
+  background-color: #502787;
   font-weight: bold;
   line-height: 1.2;
 }
 
 .btn.bg-purple {
   color: white;
-  background-color: purple;
+  background-color: #502787;
   font-weight: bold;
   line-height: 1.2;
 }
@@ -11021,7 +11021,7 @@ footer .copyright {
 }
 
 .c-menu-mobile {
-  background-color: #753BBD;
+  background-color: #623173;
   max-height: 130px;
   width: 100%;
   display: block;
