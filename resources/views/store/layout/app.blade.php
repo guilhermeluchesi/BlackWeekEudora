@@ -86,7 +86,7 @@
 </footer>
 
 <script>
-    const menu = document.querySelector('.c-menu-mobile__menu');
+    const menu = document.querySelector('.c-menu-mobile__items--home');
     const menuContainer = document.querySelector('.c-menu-options');
     let flag = false;
     menu.onclick = () => {
