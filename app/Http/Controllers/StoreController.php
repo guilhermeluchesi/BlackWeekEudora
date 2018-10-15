@@ -43,9 +43,16 @@ class StoreController extends BaseController
 
         if ($request->has('search')) {
             $search = $request->input('search');
-            $products = $products->reject(function($element) use ($search) {
-                return mb_strpos(Arr::get($element, 'Produto'), strtoupper($search)) === false;
-            });
+            if (preg_match('@\d+@', $search)) {
+                $products = $products->reject(function($element) use ($search) {
+                    return Arr::get($element, 'Cód.  SAP') != $search;
+                });
+            }
+            else {
+                $products = $products->reject(function($element) use ($search) {
+                    return mb_strpos(Arr::get($element, 'Produto'), strtoupper($search)) === false;
+                });
+            }
         }
 
         if ($request->has('type') && $request->input('type')) {
