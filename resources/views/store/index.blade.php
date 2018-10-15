@@ -60,7 +60,7 @@
         <h2>Páginas</h2>
         <div>
             @php
-                $i = 0;
+                $i = 1;
                 while($i <= $pagination->lastPage()) {
                     print('<a class="txt-grey" href="'.$pagination->url($i).'">'.$i.'</a>');
                     if ($i != $pagination->lastPage()) {
