@@ -62,7 +62,15 @@
             @php
                 $i = 1;
                 while($i <= $pagination->lastPage()) {
-                    print('<a class="txt-grey" href="'.$pagination->url($i).'&type='.Request::input('type').'&slider='.Request::input('slider').'">'.$i.'</a>');
+                    $slider = '';
+                    if (Request::input('slider')) {
+                        $slider = '&slider='.Request::input('slider');
+                    }
+                    $type = '';
+                    if (Request::input('type')) {
+                        $type = '&type='.Request::input('type');
+                    }
+                    print('<a class="txt-grey" href="'.$pagination->url($i).'&type='.Request::input('type').$slider.'">'.$i.'</a>');
                     if ($i != $pagination->lastPage()) {
                         print(',');
                     }
