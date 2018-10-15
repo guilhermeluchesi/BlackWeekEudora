@@ -62,7 +62,7 @@
             @php
                 $i = 1;
                 while($i <= $pagination->lastPage()) {
-                    print('<a class="txt-grey" href="'.$pagination->url($i).'">'.$i.'</a>');
+                    print('<a class="txt-grey" href="'.$pagination->url($i).'&type='.Request::input('type').'&slider='.Request::input('slider').'">'.$i.'</a>');
                     if ($i != $pagination->lastPage()) {
                         print(',');
                     }
