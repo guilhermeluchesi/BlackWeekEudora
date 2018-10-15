@@ -49,18 +49,30 @@
                         <span
                             class="price-card-to txt-red">POR: <b>R${!!number_format(array_get($product, 'Preço Promocionado'), 2, ',', '.')!!}</b></span>
                         <div class="hidden">
-                            <a class="col-sm-12 btn bg-purple" href="http://encontreeudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_content={!!array_get($product, 'Cód.  SAP')!!}">Comprar com<br/> uma representante</a>
+                            <a target="_blank" class="col-sm-12 btn bg-purple" href="http://encontreeudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_content={!!array_get($product, 'Cód.  SAP')!!}">Comprar com<br/> uma representante</a>
                         </div>
                     </div>
                 </div>
             </div>
         @endForeach
     </div>
-    <div class="text-center">
-        <a class="btn-load btn bg-purple-load txt-white"
-           href="{{$pagination->nextPageUrl().'&type='.Request::input('type')}}">Carregar
-            Mais</a>
-    </div>
+        <div class="text-center">
+        <h2>Páginas</h2>
+        <div>
+            @php
+                $i = 0;
+                while($i <= $pagination->lastPage()) {
+                    print('<a class="txt-grey" href="'.$pagination->url($i).'">'.$i.'</a>');
+                    if ($i != $pagination->lastPage()) {
+                        print(',');
+                    }
+                    $i++;
+                }
+           @endphp
+       </div>
+
+       </div>
+
 
     <div class="promo-app">
         <div class="col-12 side-image side-image-bottom">
@@ -72,17 +84,17 @@
 @section('footer-mobile')
     <div class="row footer-mobile">
         <div class="bg-grey col-12 col-md-2 footer-txt-mobile">
-            <a href="https://cadastro.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora">Quero Revender</a>
-            <a href="https://loja.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=sou-consumidora">Sou consumidora</a>
-            <a href="http://guia.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=revista">Revista</a>
-            <a href="http://encontreeudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=encontre-eudora">Encontre Eudora</a>
+            <a target="_blank"  href="https://cadastro.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora">Quero Revender</a>
+            <a target="_blank" href="https://loja.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=sou-consumidora">Sou consumidora</a>
+            <a target="_blank" href="http://guia.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=revista">Revista</a>
+            <a target="_blank" href="http://encontreeudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=encontre-eudora">Encontre Eudora</a>
         </div>
         <div class="col-12 col-md-2 txt-mobile-footer-small">
-            <a href="http://www.grupoboticario.com.br/pt/faca-beleza-com-a-gente/Paginas/Inicial.aspx?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=trabalhe-conosco">Trabalhe Conosco</a>
-            <a href="https://eudoraconsumidor.zendesk.com/hc/pt-br?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=duvidas-frequentes">Dúvidas Frequentes</a>
-            <a href="https://cadastro.eudora.com.br/termos-de-uso?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=termos-de-uso">Termos de Uso</a>
-            <a href="https://cadastro.eudora.com.br/politica-de-privacidade?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=politica-de-privacidade">Política de Privacidade</a>
-            <a href="https://cadastro.eudora.com.br/sobre-eudora?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=sobre-eudora">Sobre Eudora</a>
+            <a target="_blank" href="http://www.grupoboticario.com.br/pt/faca-beleza-com-a-gente/Paginas/Inicial.aspx?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=trabalhe-conosco">Trabalhe Conosco</a>
+            <a target="_blank" href="https://eudoraconsumidor.zendesk.com/hc/pt-br?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=duvidas-frequentes">Dúvidas Frequentes</a>
+            <a target="_blank" href="https://cadastro.eudora.com.br/termos-de-uso?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=termos-de-uso">Termos de Uso</a>
+            <a target="_blank" href="https://cadastro.eudora.com.br/politica-de-privacidade?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=politica-de-privacidade">Política de Privacidade</a>
+            <a target="_blank" href="https://cadastro.eudora.com.br/sobre-eudora?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=sobre-eudora">Sobre Eudora</a>
             <a href="#">Fale com Eudora</a>
          </div>
          <div class="txt-mobile-footer-smallest">
@@ -92,9 +104,9 @@
             <div>CEP: 11900-000-Ribeirão Vermelho-Registro-SP</div>
         </div>
         <div class="social-networks-mobile">
-			<a href="https://www.instagram.com/eudoraoficial/">INSTAGRAM</a>
-			<a href="https://www.facebook.com/eudoraoficial/">FACEBOOK</a>
-            <a href="https://www.youtube.com/user/eudora/">YOUTUBE</a>
+			<a target="_blank" href="https://www.instagram.com/eudoraoficial/">INSTAGRAM</a>
+			<a target="_blank" href="https://www.facebook.com/eudoraoficial/">FACEBOOK</a>
+            <a target="_blank" href="https://www.youtube.com/user/eudora/">YOUTUBE</a>
         </div>
         <div class="mobile-end-logos">
             <img class="footer-image" src="images/logo_eudora.png">
@@ -107,29 +119,29 @@
 @section('footer')
     <div class="mobile-hide">
     <div class="social-networks mobile-hide">
-        <a href="https://www.instagram.com/eudoraoficial/">INSTAGRAM</a>
-        <a href="https://www.facebook.com/eudoraoficial/">FACEBOOK</a>
-        <a href="https://www.youtube.com/user/eudora/">YOUTUBE</a>
+        <a target="_blank" href="https://www.instagram.com/eudoraoficial/">INSTAGRAM</a>
+        <a target="_blank" href="https://www.facebook.com/eudoraoficial/">FACEBOOK</a>
+        <a target="_blank" href="https://www.youtube.com/user/eudora/">YOUTUBE</a>
     </div>
     <div class="row mobile-hide">
         <div class="col-12 col-md-2">
             <h2>Eudora</h2>
-            <a href="http://www.grupoboticario.com.br/pt/faca-beleza-com-a-gente/Paginas/Inicial.aspx?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=trabalhe-conosco">Trabalhe Conosco</a>
-            <a href="https://eudoraconsumidor.zendesk.com/hc/pt-br?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=duvidas-frequentes">Dúvidas frequentes</a>
-            <a href="https://cadastro.eudora.com.br/termos-de-uso?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=termos-de-uso">Termos de uso</a>
-            <a href="https://cadastro.eudora.com.br/politica-de-privacidade?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=politica-de-privacidade">Política de privacidade</a>
-            <a href="https://cadastro.eudora.com.br/sobre-eudora?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=sobre-eudora">Sobre Eudora</a>
+            <a target="_blank" href="http://www.grupoboticario.com.br/pt/faca-beleza-com-a-gente/Paginas/Inicial.aspx?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=trabalhe-conosco">Trabalhe Conosco</a>
+            <a target="_blank" href="https://eudoraconsumidor.zendesk.com/hc/pt-br?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=duvidas-frequentes">Dúvidas frequentes</a>
+            <a target="_blank" href="https://cadastro.eudora.com.br/termos-de-uso?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=termos-de-uso">Termos de uso</a>
+            <a target="_blank" href="https://cadastro.eudora.com.br/politica-de-privacidade?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=politica-de-privacidade">Política de privacidade</a>
+            <a target="_blank" href="https://cadastro.eudora.com.br/sobre-eudora?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=sobre-eudora">Sobre Eudora</a>
             <br/>
             <h2>Fale com eudora</h2>
             0800 727 4535
         </div>
         <div class="col-12 col-md-2 offset-md-1">
             <h2>Eudora</h2>
-            <a href="https://loja.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=sou-consumidora">Sou consumidora</a>
-            <a href="https://cadastro.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=quero-revender">Quero revender</a>
-            <a href="http://guia.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=revista">Revista</a>
-            <a href="https://eudoraconsumidor.zendesk.com/hc/pt-br?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=duvidas">Dúvidas</a>
-            <a href="http://encontreeudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=encontre-eudora">Encontre Eudora</a>
+            <a target="_blank" href="https://loja.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=sou-consumidora">Sou consumidora</a>
+            <a target="_blank" href="https://cadastro.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=quero-revender">Quero revender</a>
+            <a target="_blank" href="http://guia.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=revista">Revista</a>
+            <a target="_blank" href="https://eudoraconsumidor.zendesk.com/hc/pt-br?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=duvidas">Dúvidas</a>
+            <a target="_blank" href="http://encontreeudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_term=encontre-eudora">Encontre Eudora</a>
         </div>
         <div class="col-12 col-md-7 text-right ">
             <a href="#" class="logo-eudora"><img src="images/logo_eudora.png">

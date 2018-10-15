@@ -70,7 +70,7 @@
         </nav>
         <div class="col-12 col-xl-9 col-md-8 col-sm-12">
             <p class="title__mobile">
-                <Strong>BLACK WEEK EUDORA</strong></br> Confira as promoções com os menores preços do ano.
+                <Strong>BLACK WEEK EUDORA</strong></br> produtos imperdiveis com o menor preço do ano.
             </p>
         
             @yield('content')
