@@ -10554,6 +10554,16 @@ a.bg-gold:hover,
   min-height: 1000px;
 }
 
+.page-link {
+  color: #502787 !important;
+}
+
+.page-item.active .page-link {
+  background-color: #502787 !important;
+  border-color: #502787 !important;
+  color: white !important;
+}
+
 .container-site-white {
   background-color: white;
 }

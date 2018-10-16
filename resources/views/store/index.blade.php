@@ -56,31 +56,13 @@
             </div>
         @endForeach
     </div>
-        <div class="text-center">
-        <h2>Páginas</h2>
-        <div>
-            @php
-                $i = 1;
-                while($i <= $pagination->lastPage()) {
-                    $slider = '';
-                    if (Request::input('slider')) {
-                        $slider = '&slider='.Request::input('slider');
-                    }
-                    $type = '';
-                    if (Request::input('type')) {
-                        $type = '&type='.Request::input('type');
-                    }
-                    print('<a class="txt-grey" href="'.$pagination->url($i).'&type='.Request::input('type').$slider.'">'.$i.'</a>');
-                    if ($i != $pagination->lastPage()) {
-                        print(',');
-                    }
-                    $i++;
-                }
-           @endphp
-       </div>
-
-       </div>
-
+    <div class="row justify-content-center">
+        <div class="col-md-auto col-xs-auto">
+            <h2>Páginas</h2>
+            <div class="d-none d-lg-block">{{ $pagination->appends(request()->input())->render() }}</div>
+            <div class="d-lg-none">{{ $pagination->appends(request()->input())->render('vendor/pagination/simple-bootstrap-4') }}</div>
+        </div>
+    </div>
 
     <div class="promo-app">
         <div class="col-12 side-image side-image-bottom">

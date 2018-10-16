@@ -48,7 +48,7 @@
     </div>
 </div>
 <div class="banner__desktop">
-<img src="topo.jpg" class="imageLogo img-fluid">
+    <a href="/"><img src="topo.jpg" class="imageLogo img-fluid"></a>
 </div>
 <div class="banner__mobile">
 <img src="images/banner_mobile.png" class="imageLogo img-fluid">
@@ -70,9 +70,9 @@
         </nav>
         <div class="col-12 col-xl-9 col-md-8 col-sm-12">
             <p class="title__mobile">
-                <Strong>BLACK WEEK EUDORA</strong></br> produtos imperdiveis com o menor preço do ano.
+                <Strong>BLACK WEEK EUDORA</strong></br> Produtos imperdiveis com o menor preço do ano.
             </p>
-        
+
             @yield('content')
         </div>
     </div>
