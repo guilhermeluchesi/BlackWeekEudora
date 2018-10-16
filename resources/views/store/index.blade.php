@@ -58,7 +58,6 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-auto col-xs-auto">
-            <h2>Páginas</h2>
             <div class="d-none d-lg-block">{{ $pagination->appends(request()->input())->render() }}</div>
             <div class="d-lg-none">{{ $pagination->appends(request()->input())->render('vendor/pagination/simple-bootstrap-4') }}</div>
         </div>
