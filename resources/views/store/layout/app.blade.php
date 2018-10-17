@@ -28,7 +28,7 @@
     <div class="c-menu-mobile__container c-menu-mobile__container--buttons">
         <div class="c-menu-mobile__items"><img src="images/menu.png" class="c-menu-mobile__items--home"/></div>
         <div class="c-menu-mobile__items"><img src="images/logoeudoramobile.png" class="c-menu-mobile--items--home-logo"/></div>
-        <div class="c-menu-mobile__items"><img src="images/sacola.png" class="c-menu-mobile__items--home"/></div>
+        <div class="c-menu-mobile__items">&nbsp;</div>
     </div>
     <div class="c-menu-mobile__container">
         <form class="col-12" action="/">

@@ -57,7 +57,7 @@
         @endForeach
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-auto col-xs-auto">
+        <div class="col-auto">
             <div class="d-none d-lg-block">{{ $pagination->appends(request()->input())->render() }}</div>
             <div class="d-lg-none">{{ $pagination->appends(request()->input())->render('vendor/pagination/simple-bootstrap-4') }}</div>
         </div>

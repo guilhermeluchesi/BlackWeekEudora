@@ -15,7 +15,7 @@ use Rap2hpoutre\FastExcel\FastExcel;
 
 class StoreController extends BaseController
 {
-    CONST PAGINATION = 9;
+    CONST PAGINATION = 6;
 
     public function index(Request $request)
     {
@@ -41,8 +41,7 @@ class StoreController extends BaseController
             $products = $products->sortByDesc($option);
         }
 
-        if ($request->has('search')) {
-            $search = $request->input('search');
+        if ($search = $request->input('search')) {
             if (preg_match('@\d+@', $search)) {
                 $products = $products->reject(function($element) use ($search) {
                     return Arr::get($element, 'Cód.  SAP') != $search;
