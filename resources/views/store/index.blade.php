@@ -21,34 +21,36 @@
         @foreach($products as $product)
             <div class="col-6 col-sm-6 col-xl-4 card-margin">
                 <div class="product-card">
-                    <div class="product-card-top">
-                        <div class="product-card-img-container">
-                            @if (file_exists(public_path().'/images/products/165x165_'.array_get($product, 'Cód.  SAP').'.png'))
-                            <img class="img-fluid"
-                                 src="images/products/165x165_{{array_get($product, 'Cód.  SAP')}}.png"
-                                 alt="Card image cap">
-                         @else
-                            <img class="img-fluid"
-                                 src="not_found.png"
-                                 alt="Card image cap">
-                         @endif
+                    <a target="_blank" href="http://encontreeudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_content={!!array_get($product, 'Cód.  SAP')!!}">
+                        <div class="product-card-top">
+                            <div class="product-card-img-container">
+                                @if (file_exists(public_path().'/images/products/165x165_'.array_get($product, 'Cód.  SAP').'.png'))
+                                <img class="img-fluid"
+                                     src="images/products/165x165_{{array_get($product, 'Cód.  SAP')}}.png"
+                                     alt="Card image cap">
+                             @else
+                                <img class="img-fluid"
+                                     src="not_found.png"
+                                     alt="Card image cap">
+                             @endif
+                            </div>
                         </div>
-                    </div>
-                    <div class="product-card-container-desc">
-                        <span
-                            class="product-card-code bg-gold font-white border-rounded">{!! array_get($product,'Cód.  SAP') !!}</span>
-                        <h2 class="product-card-title"><font class="product-description" color="black">{!!array_get($product,
-                            'Produto')!!}</font></h2>
-                    </div>
-                    <div class="product-card-container-footer text-center">
-                        <span
-                            class="price-card-from txt-grey">DE:<b>R${!!number_format(array_get($product, 'Valor do Guia'), 2, ',', '.')!!}</b></span>
-                        <span
-                            class="price-card-to txt-red">POR: <b>R${!!number_format(array_get($product, 'Preço Promocionado'), 2, ',', '.')!!}</b></span>
-                        <div class="hidden">
-                            <a target="_blank" class="col-sm-12 btn bg-purple" href="http://encontreeudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora&utm_content={!!array_get($product, 'Cód.  SAP')!!}">Comprar com<br/> uma representante</a>
+                        <div class="product-card-container-desc">
+                            <span
+                                class="product-card-code bg-gold font-white border-rounded">{!! array_get($product,'Cód.  SAP') !!}</span>
+                            <h2 class="product-card-title"><font class="product-description" color="black">{!!array_get($product,
+                                'Produto')!!}</font></h2>
                         </div>
-                    </div>
+                        <div class="product-card-container-footer text-center">
+                            <span
+                                class="price-card-from txt-grey">DE:<b>R${!!number_format(array_get($product, 'Valor do Guia'), 2, ',', '.')!!}</b></span>
+                            <span
+                                class="price-card-to txt-red">POR: <b>R${!!number_format(array_get($product, 'Preço Promocionado'), 2, ',', '.')!!}</b></span>
+                            <div class="hidden">
+                                <div class="col-sm-12 btn bg-purple">Comprar com<br/> uma representante</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         @endForeach

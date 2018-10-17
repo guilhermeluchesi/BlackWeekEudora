@@ -86,33 +86,48 @@
 </footer>
 
 <script>
-    const menu = document.querySelector('.c-menu-mobile__items--home');
-    const menuContainer = document.querySelector('.c-menu-options');
-    let flag = false;
-    menu.onclick = () => {
-        menuContainer.classList.toggle('c-menu-options__hidden');
-        flag = !flag;
-    }
 
-    window.onresize = () => {
-        if(flag) {
-        menuContainer.classList.toggle('c-menu-options__hidden');
-        flag = !flag;
+    var eudora = {
+        menu: {
+            button: document.querySelector('.c-menu-mobile__items--home'),
+            container: document.querySelector('.c-menu-options'),
+            opened: false,
+            toggle: function() {
+                var action = "open";
+                if (window.eudora.menu.opened) {
+                    action = "close";
+                }
+
+                window.eudora.menu[action]();
+            },
+            close: function() {
+                window.eudora.menu.container.classList.add('c-menu-options__hidden');
+                window.eudora.menu.opened = false;
+            },
+            open: function() {
+                window.eudora.menu.container.classList.remove('c-menu-options__hidden');
+                window.eudora.menu.opened = true
+            },
+            init: function() {
+                window.eudora.menu.button.onclick = window.eudora.menu.toggle;
+            }
         }
     }
 
-function evalSlider()
-{
-    var sliderValue = document.getElementById('rating').value;
-    document.getElementById('sliderVal').innerHTML = 'R$ '+sliderValue;
-}
+    window.eudora.menu.init();
 
-function evalSliderMobile()
-{
-	console.log('sdasd')
-    var sliderValueMobile = document.getElementById('ratingmobile').value;
-    document.getElementById('sliderValMobile').innerHTML = 'R$ '+sliderValueMobile;
-}
+    function evalSlider()
+    {
+        var sliderValue = document.getElementById('rating').value;
+        document.getElementById('sliderVal').innerHTML = 'R$ '+sliderValue;
+    }
+
+    function evalSliderMobile()
+    {
+        console.log('sdasd')
+        var sliderValueMobile = document.getElementById('ratingmobile').value;
+        document.getElementById('sliderValMobile').innerHTML = 'R$ '+sliderValueMobile;
+    }
 </script>
 </body>
 </html>
