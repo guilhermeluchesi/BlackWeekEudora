@@ -6,9 +6,6 @@
 @section('sidebar')
     @include('store.includes.category')
     @include('store.includes.price')
-    <div class="col-12 side-image">
-        <a class="" href="https://cadastro.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora"><img class="img-fluid" src="banner_lateral.png"/></a>
-    </div>
     <!-- <div class="col-7 col-md-8 col-xl-12 text-center">
         <a class="btn bg-purple txt-white" href="https://cadastro.eudora.com.br/?utm_source=blackweekeudora.com.br&utm_medium=lp-link&utm_campaign=blackweek-eudora">Quero revender</a>
     </div> -->
@@ -60,12 +57,6 @@
         <div class="col-auto">
             <div class="d-none d-lg-block">{{ $pagination->appends(request()->input())->render() }}</div>
             <div class="d-lg-none">{{ $pagination->appends(request()->input())->render('vendor/pagination/simple-bootstrap-4') }}</div>
-        </div>
-    </div>
-
-    <div class="promo-app">
-        <div class="col-12 side-image side-image-bottom">
-            <img class="img-fluid border" style="border-color: #532685" src="bottom_image.jpg"/>
         </div>
     </div>
 @stop
